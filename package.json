@@ -1,0 +1,37 @@
+{
+  "name": "demo",
+  "version": "1.0.0",
+  "description": "This is demo",
+  "module": "lib/index.esm.js",
+  "browser": "lib/dist.umd.js",
+  "main": "src/index.js",
+  "scripts": {
+    "start": "npx babel-node src/index.js",
+    "build": "rollup -c",
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "devDependencies": {
+    "@babel/core": "^7.2.2",
+    "@babel/node": "^7.2.2",
+    "@babel/preset-env": "^7.2.3",
+    "rollup": "^0.66.6",
+    "rollup-plugin-commonjs": "^9.2.0",
+    "rollup-plugin-node-builtins": "^2.1.2",
+    "rollup-plugin-node-resolve": "^3.4.0",
+    "rollup-plugin-uglify": "^6.0.0"
+  },
+  "keywords": [
+    "demo"
+  ],
+  "author": "wangxianzhap",
+  "repository": {
+    "type": "git",
+    "url": "git+https: //github.com/DreamerKing/demo.git"
+  },
+  "bugs": {
+    "url": "https: //github.com/DreamerKing/demo.git/issues"
+  },
+  "homepage": "https: //github.com/DreamerKing/demo.git#readme",
+  "license": "ISC"
+}
+
