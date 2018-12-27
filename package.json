@@ -1,6 +1,6 @@
 {
   "name": "demo",
-  "version": "1.0.0",
+  "version": "1.0.1",
   "description": "This is demo",
   "module": "lib/index.esm.js",
   "browser": "lib/dist.umd.js",
@@ -34,4 +34,3 @@
   "homepage": "https: //github.com/DreamerKing/demo.git#readme",
   "license": "ISC"
 }
-
