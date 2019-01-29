@@ -26,16 +26,17 @@
     "rollup-plugin-uglify": "^6.0.0"
   },
   "keywords": [
-    "demo"
+    "fp",
+    "utils"
   ],
-  "author": "wangxianzhap",
+  "author": "DreamerKing",
   "repository": {
     "type": "git",
-    "url": "git+https: //github.com/DreamerKing/demo.git"
+    "url": "git+https://github.com/DreamerKing/fp.git"
   },
   "bugs": {
-    "url": "https: //github.com/DreamerKing/demo.git/issues"
+    "url": "https://github.com/DreamerKing/fp.git/issues"
   },
-  "homepage": "https: //github.com/DreamerKing/demo.git#readme",
-  "license": "ISC"
+  "homepage": "https://github.com/DreamerKing/fp.git#readme",
+  "license": "MIT"
 }
