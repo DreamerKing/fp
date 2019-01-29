@@ -1,0 +1,192 @@
+<!doctype html>
+
+<!--
+  This is a simple example / template impress.js slide show. The goal is to be
+  easier to read for a first timer than the official and very feature rich
+  demo by bartaz (http://bartaz.github.io/impress.js/). It's also a very
+  traditional presentation that looks like slides (square screens with bullet
+  points...), again to make a first timer feel more at home. From this simple
+  presentation you can then go on to more powerful impress.js presentations!
+  
+  This example is hopefully helpful for people that want to create both
+  simple and (eventually) awesome presentations in impress.js and comfortable
+  doing that directly in HTML.
+  
+  By: @henrikingo (Still based on the HTML from bartaz' demo.)  
+    
+-->
+
+<html lang="en">
+<head>
+    <meta charset="utf-8" />
+    <title>A Study in 3D Rotations| by Henrik Ingo @henrikingo</title>
+    <meta name="description" content="Explore impress.js in 3D" />
+    <meta name="author" content="Henrik Ingo" />
+    <link href="css/3D-rotations.css" rel="stylesheet" />
+    <link rel="stylesheet" href="//cdnjs.cloudflare.com/ajax/libs/highlight.js/9.13.1/styles/default.min.css">
+    <script src="//cdnjs.cloudflare.com/ajax/libs/highlight.js/9.13.1/highlight.min.js"></script>
+</head>
+
+<body class="impress-not-supported">
+<div class="fallback-message">
+    <p>Your browser <b>doesn't support the features required</b> by impress.js, so you are presented with a simplified version of this presentation.</p>
+    <p>For the best experience please use the latest <b>Chrome</b>, <b>Safari</b> or <b>Firefox</b> browser.</p>
+</div>
+
+<div id="impress" data-transition-duration="2000">
+
+
+    <div id="overview" class="step overview" data-x="1350" data-y="100" data-z="100" data-scale="3" data-rotate-y="90">
+         <h1>Functional Programming</h1>
+         <a href="https://en.wikipedia.org/wiki/Functional_programming" target="_blank">fp in wiki</a>
+    </div>
+    <div id="overview2" class="step overview" data-x="2018" data-y="106" data-z="3018" data-scale="2">
+         <p>Unlike the <code>x/y/z</code> coordinates (aka translations), the <code>rotate-x/y/z</code> rotations are applied in a 
+         specific order, and order matters. This demo presentation exhibits the use of the new <code>data-rotate- order</code> attribute.
+         Instead of the default "xyz" order, the steps use the reversed <em>"zyx"</em> order in applying rotations around each axis.
+         Some of the steps (<a href="#step-3">3</a> &amp; <a href="#step-7">7</a>), are in positions that are not possible with the default "xyz" order.</p>
+    </div>
+
+    <div id="step-1" class="step" data-x="0" data-y="0" data-z="0"
+         data-goto-prev="step-9">
+        <p>编程范式</p>
+        <ul>
+            <li>命令式编程 （关注执行步骤，怎么做）</li>
+            <li>声明式编程  (表达执行逻辑, 应该做什么)</li>
+            <li>函数式编程 （只关注做什么）</li>
+        </ul>
+    </div>
+
+    <div id="step-2" class="step" data-x="420" data-y="-70" data-z="-250" data-rotate-z="45" data-rotate-y="-45" data-rotate-order="zyx">
+        <p>函数式编程的主要概念</p>
+        <ul>
+            <li><a href="https://en.wikipedia.org/wiki/First-class_function">函数优先</a> 高阶函数 柯里化 偏函数</li>
+            <li>纯函数 闭包</li>
+            <li>递归</li>
+            <li>惰性（延迟）求值</li>
+            <li>引用透明 不可变数据</li>
+        </ul>
+    </div>
+
+    <div id="step-3" class="step" data-x="700" data-y="350" data-z="-350" data-rotate-z="90" data-rotate-y="-90" data-rotate-order="zyx">
+        <p>FP优点和缺点</p>
+        <ul>
+            <li>无副作用 可测试 易理解</li>
+            <li>可缓存</li>
+            <li>线程安全 支持并行</li>
+            <li>CPU和内存的使用效率较低</li>
+        </ul>
+    </div>
+    <div id="step-4" class="step" data-x="422" data-y="780" data-z="-250" data-rotate-z="135" data-rotate-y="-135" data-rotate-order="zyx">
+        <p>数组遍历 IP vs FP</p>
+    <pre><code>
+        let array = [1, 2, 3];
+        for(let i = 0, len = array.length; i < len; i++){ 
+            console.log(array[i]); 
+        }
+</code></pre>
+<pre><code class="javascript">
+        export const forEach = (array, fn) => {
+            for (const value of array) {
+                fn(value)
+            }
+        }
+        forEach(array, console.log)
+    </code></pre>
+<pre><code>
+        array.forEach(console.log);
+
+</code></pre>
+    </div>
+    <div id="step-5" class="step" data-x="0" data-y="702" data-z="0" data-rotate-z="180" data-rotate-y="-180" data-rotate-order="zyx">
+        <p>函数</p>
+        <ul>
+            <li>1. 存储函数</li>
+            <li>1. 传递函数</li>
+            <li>1. 返回函数</li>
+        </ul>
+    </div>
+
+    <div id="step-6" class="step" data-x="379" data-y="780" data-z="270" data-rotate-z="135" data-rotate-y="-225" data-rotate-order="zyx">
+        <p>函数绑定</p>
+        <p class="intruduction">
+            函数绑定可以在特定的环境中以指定的参数调用另一函数,以便将函数作为变量传递保存在代码执行环境中。
+        </p>
+        <pre><code>export const bind = (fn, context) => 
+            (...args) => fn.apply(context, args);
+        </code></pre>
+        <pre><code>     const A = {
+                message: "A",
+                log() {
+                    console.log(this.message)
+                }
+            } 
+    const B = {
+                message: "B"
+            }
+        const log = bind(A.log, B);
+        log();</code></pre>
+    </div>
+
+    <div id="step-7" class="step" data-x="700" data-y="350" data-z="350" data-rotate-z="90" data-rotate-y="-270" data-rotate-order="zyx">
+        <p>函数柯里化</p>
+        <p class="intruduction">函数柯里化是将多元函数转换成一元函数的过程。</p>
+        <p class="intruduction">创建过程: 调用另外一个函数并为它传入要柯里化的函数和必要的参数。</p>
+<pre><code>     export const curry = (fn) => {
+            if (typeof fn !== 'function') {
+                throw Error("No function provied");
+            }
+            return function curriedFn(...args){
+                if(args.length < fn.length){ 
+                    return function(...innerArgs){ 
+                        let finalArgs=args.concat(innerArgs) 
+                        return curriedFn.apply(null, finalArgs ); 
+                    } 
+                } 
+                return fn.apply(null, args); 
+            }
+        }</code></pre>
+    </div>
+    <div id="step-8" class="step" data-x="379" data-y="-70" data-z="270" data-rotate-z="45" data-rotate-y="-315"
+        data-rotate-order="zyx" data-goto-next="step-1">
+        <p>组合与管道</p>
+        <pre><code>
+        const multiply = (x, y, z) => x * y * z;
+
+        const curry1 = curry(multiply)(3);
+        console.log(curry1(2)(3));
+        
+        const curry2 = curry(multiply)(3, 2);
+        console.log(curry2(6));
+        </code></pre>
+    </div>
+    <div id="step-9" class="step" data-x="379" data-y="-70" data-z="270" data-rotate-z="0" data-rotate-y="-315" data-rotate-order="zyx"
+         data-goto-next="step-1">
+        <p>函数柯里化实例2</p>
+        <pre><code>
+        const match = curry(function(exp, str){
+            return str.match(exp);
+        });
+        
+        const hasNumber = match(/\d+/);
+        
+        const filter = curry(function(f, arr){
+            return arr.filter(f);
+        });
+        
+        const findNumbers = filter(hasNumber);
+        
+        let hasNumbers = findNumbers(["js", "w3c", "2ha"])
+        console.log(hasNumbers);
+        </code></pre>
+    </div>
+</div>
+
+<div id="impress-toolbar"></div>
+<div id="impress-help"></div>
+
+<script type="text/javascript" src="js/impress.js"></script>
+<script>impress().init();</script>
+
+</body>
+</html>
