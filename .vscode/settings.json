@@ -1,0 +1,6 @@
+{
+  "jest.debugMode": false,
+  "jest.autoRun": "false",
+  "jest.jestCommandLine": "test",
+  "jestTestExplorer.flattenExplorer": true,
+}

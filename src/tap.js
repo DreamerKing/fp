@@ -1,5 +1,7 @@
 export const tap = (value) => (fn) => {
-    typeof(fn) === 'function' && fn(value), console.log(value);
+    console.log(value);
+    if (typeof fn === 'function') return fn(value);
+    return value;
 }
 
 
