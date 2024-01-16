@@ -1,1 +1,4 @@
-export const bind = (fn, context) => (...args) => fn.apply(context, args);
+export const bind =
+  (fn, context) =>
+  (...args) =>
+    fn.apply(context, args);

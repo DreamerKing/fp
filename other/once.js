@@ -1,6 +1,6 @@
-import { once } from '../src/once'
+import { once } from "../src/once";
 const doPay = once(() => {
-    console.log("pay once is done");
+  console.log("pay once is done");
 });
 
 doPay();

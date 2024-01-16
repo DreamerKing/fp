@@ -1,4 +1,4 @@
-import { every } from '../src/every';
+import { every } from "../src/every";
 
 let t1 = every([NaN, NaN, NaN], isNaN);
 let t2 = every([NaN, NaN, 3], isNaN);

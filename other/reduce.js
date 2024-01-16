@@ -1,4 +1,4 @@
-import { reduce } from '../src/reduce';
+import { reduce } from "../src/reduce";
 
 /* export const reduce = (array, fn) => {
     let accumlator = 0;

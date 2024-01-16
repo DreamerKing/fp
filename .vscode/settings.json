@@ -2,5 +2,11 @@
   "jest.debugMode": false,
   "jest.autoRun": "false",
   "jest.jestCommandLine": "test",
+  "javascript.format.enabled": true,
+  "editor.formatOnSave": true,
+  "[javascript]": {
+    "editor.defaultFormatter": "esbenp.prettier-vscode"
+  },
   "jestTestExplorer.flattenExplorer": true,
+  "jestTestExplorer.logpanel": true
 }

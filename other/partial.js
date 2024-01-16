@@ -1,5 +1,8 @@
 // 偏函数 通过填充原始函数的部分参数来创建函数
-const partial = (fn, ...args) => (...moreArgs) => fn(...[...args, ...moreArgs]);
+const partial =
+  (fn, ...args) =>
+  (...moreArgs) =>
+    fn(...[...args, ...moreArgs]);
 
 const add3 = (a, b, c) => a + b + c;
 

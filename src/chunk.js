@@ -5,13 +5,12 @@
 // 使用定时器分割循环 // 数组分块
 // 基本思路：为要处理的项目建立一个队列，然后设置定时器取出下一个要处理的项目，接着再设置另外一个定时器。给予其他处理有机会执行，从而避免长时间执行脚本的错误。
 
-export function chunk(arrays, fn, ctx, time){
-    setTimeout(function(){
-        let item = array.shift();
-        fn.call(ctx, item);
-        if(arrays.length > 0){
-            setTimeout(arguments.callee, time)
-        }
-    }, time);
+export function chunk(arrays, fn, ctx, time) {
+  setTimeout(function () {
+    let item = array.shift();
+    fn.call(ctx, item);
+    if (arrays.length > 0) {
+      setTimeout(arguments.callee, time);
+    }
+  }, time);
 }
-

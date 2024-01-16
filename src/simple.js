@@ -1,1 +1,1 @@
-export const simple = (s) => s;
+export const simple = s => s;

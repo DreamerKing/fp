@@ -1,1 +1,1 @@
-export const getType = (varable) => typeof varable;
+export const getType = varable => typeof varable;

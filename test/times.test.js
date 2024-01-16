@@ -1,9 +1,9 @@
-import { times } from '../src/times.js'
+import { times } from "../src/times.js";
 
-test('times()', () => {
+test("times()", () => {
   let count = 0;
-  times(3.2, (i) => {
+  times(3.2, i => {
     count++;
   });
   expect(count).toBe(3);
-})
+});

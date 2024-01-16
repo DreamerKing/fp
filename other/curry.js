@@ -1,6 +1,6 @@
 // 函数柯里化用于创建已经设置好了一个或多个参数的函数。实现的方法与函数绑定一样：使用闭包返回一个函数。区别在于当函数被调用时，返回的函数还需要设置一些传入参数。
 // 创建步骤：调用另外一个函数并为它传入要柯里化的函数和必要的参数。
-import { curry } from '../src/curry';
+import { curry } from "../src/curry";
 
 /* 
 const add = (x, y) => x + y;
@@ -35,16 +35,11 @@ const multiply = (x, y, z) => x * y * z;
 const multiply2 = curryn(multiply)(4, 3, 2);
 console.log(multiply2); */
 
-
-
-
 const curry1 = curry(multiply)(3);
 console.log(curry1(2)(3));
 
 const curry2 = curry(multiply)(3, 2);
 console.log(curry2(6));
-
-
 
 /* const match = curry(function (exp, str) {
     return str.match(exp);
@@ -69,9 +64,6 @@ let map = curry(function (f, arr) {
 let squreAll = map((x) => x * x);
 
 console.log(squreAll([1, 2, 5])); */
-
-
-
 
 /* function curry(fn){
     var args = Array.prototype.slice.call(arguments, 1);
